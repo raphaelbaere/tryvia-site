@@ -11,6 +11,7 @@ body {
 .App-logo {
   height: 15vmin;
   pointer-events: none;
+  margin-bottom: 50px;
 }
 
 .red-border {
@@ -19,6 +20,10 @@ body {
 
 .green-border {
   border: 1px solid green;
+}
+
+.sua-vez {
+  font-family: 'Roboto';
 }
 
 @media ( prefers-reduced-motion : no-preference ) {
@@ -41,6 +46,13 @@ body {
 
 .App-link {
   color: #61dafb;
+}
+
+footer {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes shake {

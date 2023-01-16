@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Button, Paper, TextField } from '@mui/material';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setNameNadEmailAction } from '../redux/actions';
+import ResponsiveAppBar from '../Components/Header2';
 
 class Login extends Component {
   state = {
@@ -47,36 +49,49 @@ class Login extends Component {
     const { name, email, isButtonInvalid } = this.state;
     return (
       <div>
-        <input
-          type="email"
-          data-testid="input-gravatar-email"
-          name="email"
-          value={ email }
-          onChange={ this.handleChange }
-        />
-        <input
-          type="text"
-          data-testid="input-player-name"
-          name="name"
-          value={ name }
-          onChange={ this.handleChange }
-        />
-        <button
-          type="button"
-          data-testid="btn-play"
-          disabled={ isButtonInvalid }
-          onClick={ this.startGame }
-        >
-          Play
-        </button>
-        <button
-          type="button"
-          data-testid="btn-settings"
-          onClick={ this.redirect }
-        >
-          Setting
-        </button>
+        <Paper elevation={ 3 }>
+          <TextField
+            sx={ { margin: 2 } }
+            label="Email"
+            variant="outlined"
+            type="email"
+            data-testid="input-gravatar-email"
+            name="email"
+            value={ email }
+            onChange={ this.handleChange }
+          />
+          <TextField
+            sx={ { margin: 2 } }
+            label="Nome"
+            variant="outlined"
+            type="text"
+            data-testid="input-player-name"
+            name="name"
+            value={ name }
+            onChange={ this.handleChange }
+          />
+          <Button
+            sx={ { margin: 3 } }
+            variant="contained"
+            color="success"
+            type="button"
+            data-testid="btn-play"
+            disabled={ isButtonInvalid }
+            onClick={ this.startGame }
+          >
+            Play
+          </Button>
+          <Button
+            sx={ { margin: 2 } }
+            variant="contained"
+            type="button"
+            data-testid="btn-settings"
+            onClick={ this.redirect }
+          >
+            Settings
+          </Button>
 
+        </Paper>
       </div>
     );
   }
