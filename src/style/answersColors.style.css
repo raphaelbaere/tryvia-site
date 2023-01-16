@@ -1,9 +1,21 @@
 .correct {
   border: 3px solid rgb(6, 240, 15);
+  margin-left: 5px;
+  border-radius: 5%;
+  background-color: white;
+  padding: 15px;
+  color: black;
+  font-weight: bold;
 }
 
 .wrong {
   border: 3px solid red;
+  margin-left: 5px;
+  border-radius: 5%;
+  background-color: white;
+  padding: 15px;
+  color: black;
+  font-weight: bold;
 }
 
 .none {

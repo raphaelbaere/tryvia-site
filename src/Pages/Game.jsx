@@ -6,6 +6,7 @@ import Timer from '../Components/Timer';
 import '../style/answersColors.style.css';
 import shuffle from '../util/shuffle';
 import { setNewScore, setAssertions } from '../redux/actions';
+import { Paper } from '@mui/material';
 
 class Game extends Component {
   state = {
@@ -137,7 +138,7 @@ class Game extends Component {
         <button
           key={ dataTestId }
           type="button"
-          className={ hasAnswered ? eleClass : '' }
+          className={ hasAnswered ? eleClass : 'answers' }
           data-testid={ dataTestId }
           onClick={ (e) => {
             this.triggerAnswer();
@@ -174,16 +175,16 @@ class Game extends Component {
     } = this.state;
     // const { prop1, dispatch } = this.props;
     return (
-      <div>
+      <Paper sx={ { marginTop: -5, padding: 3, marginBottom: 2 } }>
         <Header />
-        <Timer
+        <div id="game-questions">
+          <h2 className="current-question" data-testid="current-question">{ 'Question ' + currentQuestion}</h2>
+          <Timer
           setTimerStartAndStop={ this.setTimerStartAndStop }
           triggerAnswer={ this.triggerAnswer }
-        />
-        <div id="game-questions">
-          <h2 data-testid="current-question">{ currentQuestion + 1 }</h2>
-          <h3 data-testid="question-category">{ category }</h3>
-          <h3 data-testid="question-text">{ text }</h3>
+          />
+          <h3 className="current-question" data-testid="question-category">{ category }</h3>
+          <h3 className="question-text" data-testid="question-text">{ text }</h3>
           <div data-testid="answer-options">
             { this.renderShuffledAnswer() }
           </div>
@@ -193,11 +194,12 @@ class Game extends Component {
               type="button"
               onClick={ this.changeQuestion }
               data-testid="btn-next"
+              className="next"
             >
               Next
             </button>)}
         </div>
-      </div>
+      </Paper>
     );
   }
 }

@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import BasicModal from './Modal';
+import BasicModal2 from './Modal2';
 
 const pages = ['About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -152,6 +153,7 @@ function ResponsiveAppBar() {
                 </MenuItem>
               ))}
             </Menu>
+            <BasicModal2 />
             <BasicModal />
           </Box>
         </Toolbar>

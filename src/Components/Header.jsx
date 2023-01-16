@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React from 'react';
 import { MD5 } from 'crypto-js';
+import '../App.css';
 
 function Header(props) {
-  console.log(props);
   const { player } = props;
   const { gravatarEmail, score, name } = player;
 
@@ -22,14 +22,17 @@ function Header(props) {
   savedImgLocalStoraage();
 
   return (
-    <div>
+    <div className="header-divs">
       <img
+        className="header-img"
         data-testid="header-profile-picture"
         src={ constructGravatarUrl() }
         alt="profile"
       />
-      <h6 data-testid="header-score">{ score }</h6>
-      <h6 data-testid="header-player-name">{ name }</h6>
+      <div className="header-divs2">
+        <h6 data-testid="header-player-name">{ name + ' Score:' }</h6>
+        <h6 className="header-score" data-testid="header-score">{ score }</h6>
+      </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setTimeWhenFinishedAction } from '../redux/actions';
+import '../App.css';
 
 class Timer extends Component {
   state = {
@@ -63,8 +64,10 @@ class Timer extends Component {
   render() {
     const { timer } = this.state;
     return (
-      <div data-testid="timer">
-        { timer }
+      <div className="timer-container" data-testid="timer">
+        <p>Time 
+        { ' ' + timer }
+        </p>
       </div>
     );
   }

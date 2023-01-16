@@ -23,7 +23,7 @@ export default function BasicModal() {
 
   return (
     <div>
-      <Button sx={ { color: 'white', position: 'absolute', top: 16, left: 212 } } onClick={ handleOpen }>How to play?</Button>
+      <Button sx={ { color: 'black', position: 'absolute', top: 16, left: 212 } } onClick={ handleOpen }>How to play?</Button>
       <Modal
         open={ open }
         onClose={ handleClose }

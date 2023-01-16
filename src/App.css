@@ -22,6 +22,10 @@ body {
   border: 1px solid green;
 }
 
+.team-members {
+  width: 100px;
+}
+
 .sua-vez {
   font-family: 'Roboto';
 }
@@ -42,6 +46,64 @@ body {
   font-size: calc(10px + 2vmin);
   justify-content: center;
   min-height: 100vh;
+}
+
+.header-img {
+  width: 100px;
+  margin-top: 10px;
+}
+
+.header-divs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.current-question {
+  margin: 0px;
+}
+
+.header-divs2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.answers {
+  margin-left: 5px;
+  border-radius: 5%;
+  background-color: white;
+  border: 2px solid black;
+  padding: 15px;
+}
+
+.next {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  border-radius: 5%;
+  background-color: white;
+  border: 2px solid black;
+  padding: 15px;
+}
+
+.question-text {
+  text-align: center;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.container {
+  display: flex;
+}
+
+.avatar-desc {
+  margin-left: 10px;
+  text-align: center;
 }
 
 .App-link {
