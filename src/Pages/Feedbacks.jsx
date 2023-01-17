@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../Components/Header';
 import { resetScoreAction } from '../redux/actions';
+import '../App.css';
+import { Paper } from '@mui/material';
 
 let number = 0;
 
@@ -58,34 +60,42 @@ class Feedbacks extends Component {
 
     return (
       <div data-testid="feedback-text">
-        <Header />
-        <h2 data-testid="feedback-total-score">
-          {score}
-        </h2>
-        <h3 data-testid="feedback-total-question">
-          {assertions}
-        </h3>
-        <button
-          type="button"
-          data-testid="btn-play-again"
-          onClick={ () => {
-            this.redirectToLogin();
-            this.resetScore();
-          } }
-        >
-          Play Again
-        </button>
-        <button
-          type="button"
-          data-testid="btn-ranking"
-          onClick={ this.redirectToRanking }
-        >
-          Ranking
-        </button>
-        {
-          (assertions < value) ? <span>Could be better...</span> : <span>Well Done!</span>
-        }
-
+        <Paper sx={ { marginTop: -5, padding: 3, marginBottom: 2 } }>
+          <Header />
+          <h2>Your Score:</h2>
+          <h2 data-testid="feedback-total-score">
+            {score}
+          </h2>
+          <h2>Total of Correct Answers:</h2>
+          <h3 data-testid="feedback-total-question">
+            {assertions}
+          </h3>
+          <div className="feedback-container">
+            <h2>Our conclusion:</h2>
+            {
+              (assertions < value) ? <span>Could be better...</span> : <span>Well Done!</span>
+            }
+            <button
+              type="button"
+              data-testid="btn-play-again"
+              className="feedback-buttons"
+              onClick={ () => {
+                this.redirectToLogin();
+                this.resetScore();
+              } }
+            >
+              Play Again
+            </button>
+            <button
+              type="button"
+              data-testid="btn-ranking"
+              className="feedback-buttons"
+              onClick={ this.redirectToRanking }
+            >
+              Ranking
+            </button>
+          </div>
+        </Paper>
       </div>
     );
   }

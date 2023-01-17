@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import { Paper } from '@mui/material';
 import { resetScoreAction } from '../redux/actions';
+import '../App.css';
 
 class Ranking extends Component {
   redirect = () => {
@@ -30,7 +32,7 @@ class Ranking extends Component {
     localStorage.setItem('rankedPeople', JSON.stringify(rankedAtualized));
 
     return (
-      <div>
+      <Paper sx={ { marginTop: -5, padding: 3, marginBottom: 2 } }>
         <h3 data-testid="ranking-title">
           Ranking
         </h3>
@@ -47,6 +49,7 @@ class Ranking extends Component {
         <button
           type="button"
           data-testid="btn-go-home"
+          className="feedback-buttons"
           onClick={ () => {
             this.redirect();
             this.resetScore();
@@ -54,7 +57,7 @@ class Ranking extends Component {
         >
           Go Home!
         </button>
-      </div>
+      </Paper>
     );
   }
 }
